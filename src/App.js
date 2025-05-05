@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Notification from './Component/Supscription/Notification';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+          {/* <Route path="/hlo" element={<Hlo/>}/> */}
+          {/* <Route path="/filesaver" element={<FileSaverComponent/>}/> */}
+          {/* <Route path="/notification" element={<ProductForm/>}/> */}
+          <Route path="/" element={<Notification/>}/>
+          {/* <Route path="/s" element={<FormikVsUseFormik/>}/> */}
+          {/* <Route path="/downloadpdf" element={<CroModalViewer/>}/> */}
+          {/* <Route path="/workout" element={<Workout/>}/> */}
+       
+      </Routes>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
