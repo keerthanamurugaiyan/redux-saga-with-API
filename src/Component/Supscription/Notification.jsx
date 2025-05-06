@@ -39,7 +39,7 @@ function Notification() {
 
     <div className="d-flex justify-content-center align-self-center">
 
-      <form onSubmit={handleSubmit} className='form p-4 rounded-5 w-50 mt-5' autoComplete='off' style={{ backgroundColor: "#7ba373" }}>
+      <form onSubmit={handleSubmit} className='form p-4 rounded-5 mt-5' autoComplete='off' style={{ backgroundColor: "#7ba373", width:"30%" }}>
 
         <div className="position-relative d-inline-block">
           <FiBell size={32} className="text-light" />
