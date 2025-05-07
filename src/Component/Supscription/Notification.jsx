@@ -1,7 +1,7 @@
 // ProductForm.jsx
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { postProduct } from '../../Redux/Action/Notifi_Action'; 
+import { postProduct } from '../../Redux/Action/Notifi_Action';
 import { Dropdown, Badge } from 'react-bootstrap';
 import { FiBell } from 'react-icons/fi';
 
@@ -39,7 +39,7 @@ function Notification() {
 
     <div className="d-flex justify-content-center align-self-center">
 
-      <form onSubmit={handleSubmit} className='form p-4 rounded-5 mt-5' autoComplete='off' style={{ backgroundColor: "#7ba373", width:"30%" }}>
+      <form onSubmit={handleSubmit} className='form p-4 rounded-5 mt-5' autoComplete='off' style={{ backgroundColor: "#7ba373", width: "30%" }}>
 
         <div className="position-relative d-inline-block">
           <FiBell size={32} className="text-light" />

@@ -45,28 +45,25 @@ function PdfPrint() {
     link.click();
     document.body.removeChild(link);
   };
-  
+
 
   return (
     <>
-       {/* <button className="btn btn-primary text-center d-flex justify-content-center align-items-center" onClick={openCroModal}>
-        <i className="fa fa-print mr-1 text-light"></i> Print CRO
-      </button>  */}
 
-<div className="d-flex justify-content-center align-items-center" style={{ height: '63vh' }}>
-  <motion.button
-    className="btn d-flex fw-bold text-light justify-content-center align-items-center"
-    style={{ backgroundColor: '#5BA4E5', padding: '12px 24px', fontSize: '1.1rem', borderRadius: '10px' }}
-    onClick={openCroModal}
-    initial={{ opacity: 0, scale: 0.8 }}
-    animate={{ opacity: 1, scale: 1 }}
-    transition={{ duration: 0.6, ease: 'easeOut' }}
-    whileHover={{ scale: 1.05 }}
-    whileTap={{ scale: 0.95 }}
-  >
-     <FaEnvelopeOpenText size={20} className="me-2" /> Print CRO
-  </motion.button>
-</div>
+      <div className="d-flex justify-content-center align-items-center" style={{ height: '63vh' }}>
+        <motion.button
+          className="btn d-flex fw-bold text-light justify-content-center align-items-center"
+          style={{ backgroundColor: '#5BA4E5', padding: '12px 24px', fontSize: '1.1rem', borderRadius: '10px' }}
+          onClick={openCroModal}
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <FaEnvelopeOpenText size={20} className="me-2" /> Print CRO
+        </motion.button>
+      </div>
 
       <Modal
         isOpen={modalIsOpen}
@@ -77,12 +74,12 @@ function PdfPrint() {
         <div className="modal-header d-flex justify-content-between align-items-center">
           <h5 className="modal-title ms-3">{fileName}</h5>
           <div>
-            <button className="btn text-light fw-bold mr-2" style={{backgroundColor:'#5BA4E5'}} onClick={downloadPdf}>
-            <RiDownloadCloud2Fill size={20} className="mb-1" /> Download
+            <button className="btn text-light fw-bold mr-2" style={{ backgroundColor: '#5BA4E5' }} onClick={downloadPdf}>
+              <RiDownloadCloud2Fill size={20} className="mb-1" /> Download
             </button>
-            <button type="button" className="btn ms-2 mb-5 fw-bold" aria-label="Close" onClick={closeModal} style={{color:"#2C3D5C"}}>
+            <button type="button" className="btn ms-2 mb-5 fw-bold" aria-label="Close" onClick={closeModal} style={{ color: "#2C3D5C" }}>
               {/* <span aria-hidden="true">&times;</span> */}
-              <IoClose size={20} style={{color:"#2C3D5C"}}/>
+              <IoClose size={20} style={{ color: "#2C3D5C" }} />
             </button>
           </div>
         </div>
@@ -90,9 +87,9 @@ function PdfPrint() {
         <div className="modal-body mt-1" style={{ height: '600px' }}>
           {pdfSrc ? (
             <Document file={pdfSrc}>
-              <Page pageNumber={1} width={800}  
-              renderTextLayer={false}
-              renderAnnotationLayer={false} />
+              <Page pageNumber={1} width={800}
+                renderTextLayer={false}
+                renderAnnotationLayer={false} />
             </Document>
           ) : (
             <p>Loading PDF...</p>
