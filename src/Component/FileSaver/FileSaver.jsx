@@ -33,6 +33,7 @@
 import React from "react";
 import { saveAs } from "file-saver";
 import { motion } from "framer-motion";
+import { ImDownload } from "react-icons/im";
 import file from "../Assets/Keerthana Murugaiyan_Resume.pdf";
 
 function FileSaver() {
@@ -102,7 +103,7 @@ function FileSaver() {
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.6, ease: 'easeOut' }}
                 >
-                    Download PDF
+                    <ImDownload size={20} className="me-2 mb-1" />Download PDF
                 </motion.button>
             </div>
         </div>

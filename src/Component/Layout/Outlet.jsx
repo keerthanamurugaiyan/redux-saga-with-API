@@ -36,12 +36,13 @@ import { Outlet, useLocation } from 'react-router-dom';
 import Navigate from './Navigate';
 import Footer from './Footer';
 import FloatingHearts from './FloatingHearts';
+import CursorTrail from './CursorTrail';
 
 const routeBackgrounds = {
-  '/': 'linear-gradient(135deg, #e8d9f3, #d6c3ee)',          // home
-  '/notification': '#DED3B2', // yellowish
-  '/file-saver': '#AD8C85',   // greenish
-  '/cro-pdf': 'linear-gradient(135deg, #D0E7FF, #87CEEB)',      // bluish
+  '/': 'linear-gradient(135deg, #e8d9f3, #d6c3ee)',
+  '/notification': '#DED3B2',
+  '/file-saver': '#AD8C85',
+  '/cro-pdf': '#C2E7FF',
 };
 
 const Layout = () => {
@@ -59,6 +60,7 @@ const Layout = () => {
         flexDirection: 'column',
       }}
     >
+      <CursorTrail />
       <FloatingHearts />
       <Navigate />
       <div style={{ flex: 1 }}>
@@ -70,5 +72,3 @@ const Layout = () => {
 };
 
 export default Layout;
-
-

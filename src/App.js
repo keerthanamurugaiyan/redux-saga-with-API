@@ -3,6 +3,7 @@ import Notification from './Component/Supscription/Notification';
 import FileSaver from './Component/FileSaver/FileSaver';
 import HomePage from './Component/Home/Home';
 import Layout from './Component/Layout/Outlet';
+import PdfPrint from './Component/ApiPdfViewer/PdfPrint';
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
           {/* <Route path="/" element={<HomePage/>}/> */}
           <Route path="/notification" element={<Notification/>}/>
           <Route path="/file-saver" element={<FileSaver/>}/>
+          <Route path="/cro-pdf" element={<PdfPrint/>}/>
           </Route>
       </Routes>
     </BrowserRouter>

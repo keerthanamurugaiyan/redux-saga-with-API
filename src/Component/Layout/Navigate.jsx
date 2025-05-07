@@ -151,6 +151,7 @@ import React from 'react';
 import { Nav, NavDropdown, Navbar } from 'react-bootstrap';
 import { NavLink, useLocation } from 'react-router-dom';
 import { CgMenuHotdog } from "react-icons/cg";
+import  logo  from "../Assets/logo.png";
 
 const hoverStyle = {
   '/': {
@@ -219,9 +220,15 @@ const Navigate = () => {
       }}
     >
       <div className="container-fluid px-0">
-        <NavLink to="/" className="navbar-brand text-light fw-bold">
-          Crup Application
-        </NavLink>
+      <NavLink to="/" className="navbar-brand">
+  <div style={{ width: '50px', height: '50px', display: 'flex', alignItems: 'center' }}>
+    <img
+      src={logo} 
+      alt="Logo" 
+      style={{ width: '100%', height: '100%', objectFit: 'contain', color:"whitesmoke" }} 
+    />
+  </div>
+</NavLink>
 
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
