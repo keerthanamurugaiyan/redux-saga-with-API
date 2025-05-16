@@ -1,8 +1,29 @@
 // productActions.js
+
+// Action Types
 export const POST_PRODUCT = 'POST_PRODUCT';
 export const POST_PRODUCT_SUCCESS = 'POST_PRODUCT_SUCCESS';
 export const FETCH_NOTIFICATIONS = 'FETCH_NOTIFICATIONS';
 export const SET_NOTIFICATIONS = 'SET_NOTIFICATIONS';
+export const SET_SUCCESS_MESSAGE = 'SET_SUCCESS_MESSAGE';
 
-export const postProduct = (payload) => ({ type: POST_PRODUCT, payload });
-export const fetchNotifications = () => ({ type: FETCH_NOTIFICATIONS });
+// Action Creators
+export const postProduct = (payload) => ({
+  type: POST_PRODUCT,
+  payload
+});
+
+export const fetchNotifications = () => ({
+  type: FETCH_NOTIFICATIONS
+});
+
+export const setNotifications = (payload) => ({
+  type: SET_NOTIFICATIONS,
+  payload
+});
+
+// Optional: add action creator (if needed)
+export const setSuccessMessage = (payload) => ({
+  type: SET_SUCCESS_MESSAGE,
+  payload,
+});
