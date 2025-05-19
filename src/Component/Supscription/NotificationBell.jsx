@@ -3,7 +3,10 @@ import { FiBell } from 'react-icons/fi';
 import { useSelector } from 'react-redux';
 
 function NotificationBell() {
-  const notifications = useSelector((state) => state.notifications?.notifications);
+  // const notifications = useSelector((state) => state.notifications?.notifications);
+  const notifications = useSelector((state) => state.notifications?.notifications || []);
+console.log("🔔 Notifications in Redux:", notifications);
+
 
   return (
 <div className="position-relative d-inline-block">

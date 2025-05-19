@@ -1,5 +1,5 @@
 import { call, put, takeLatest, delay, fork } from 'redux-saga/effects';
-import { POST_PRODUCT, POST_PRODUCT_SUCCESS, SET_NOTIFICATIONS, SET_SUCCESS_MESSAGE, } from '../Action/Notifi_Action'; 
+import { POST_PRODUCT, POST_PRODUCT_SUCCESS, SET_ERROR_MESSAGE, SET_NOTIFICATIONS, SET_SUCCESS_MESSAGE, } from '../Action/Notifi_Action'; 
 import { getNotificationsAPI, postProductAPI } from '../../Services/Notifi_Api';
 
 function* fetchNotificationsSaga() {
@@ -17,25 +17,26 @@ function* fetchNotificationsSaga() {
 
 function* postProductSaga(action) {
   try {
-    yield call(postProductAPI, action.payload);
+    const response = yield call(postProductAPI, action.payload);
     yield put({ type: POST_PRODUCT_SUCCESS });
 
-    // 🔁 Refresh notifications after post
-    const response = yield call(getNotificationsAPI);
-    yield put({ type: SET_NOTIFICATIONS, payload: response.data });
+    const notifRes = yield call(getNotificationsAPI);
 
-    // ✅ Show success message for popup
+    yield put({ type: SET_NOTIFICATIONS, payload: notifRes.data.notifications });
+
     yield put({
       type: SET_SUCCESS_MESSAGE,
-      payload: '✅ Product posted and notification sent.',
+      payload: response?.data?.message || '✅ Product posted successfully.',
     });
 
   } catch (error) {
-    console.error('Post Product Error:', error);
+    yield put({
+      type: SET_ERROR_MESSAGE,
+      payload: error?.response?.data?.message || '❌ Failed to post product.',
+    });
   }
 }
 
-// ✅ Only one default export!
 export default function* NotificationSaga() {
   yield takeLatest(POST_PRODUCT, postProductSaga);
   yield fork(fetchNotificationsSaga);

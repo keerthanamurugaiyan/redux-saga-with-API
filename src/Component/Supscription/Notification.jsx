@@ -36,7 +36,6 @@ function Notification() {
     dispatch(postProduct(product));
     setFormData({ id: '', name: '', qty: '', price: '' });
 
-    // 🟢 Show success message
     setSuccessMessage(true);
     setTimeout(() => setSuccessMessage(false), 3000); // Hide after 3s
   };
@@ -44,7 +43,6 @@ function Notification() {
   return (
     <div className="d-flex justify-content-center align-self-center position-relative">
 
-      {/* 🟢 Framer Motion Popup */}
       <AnimatePresence>
         {successMessage && (
           <motion.div
