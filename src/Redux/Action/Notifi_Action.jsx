@@ -20,8 +20,3 @@ export const setNotifications = (payload) => ({
   type: SET_NOTIFICATIONS,
   payload
 });
-
-// export const setSuccessMessage = (payload) => ({
-//   type: SET_SUCCESS_MESSAGE,
-//   payload,
-// });

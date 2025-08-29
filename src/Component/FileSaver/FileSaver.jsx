@@ -1,40 +1,9 @@
-// import React from "react";
-// import { saveAs } from "file-saver";
-// import file from "../Assets/Keerthana Murugaiyan_Resume.pdf"
-
-// function FileSaver() {
-//     const handleDownload = () => {
-//         // saveAs("https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf", "sample.pdf");
-//         saveAs(file, "sample.pdf");
-//     };
-
-//     return (
-//         <div style={{ backgroundColor: "#AB8B84", minHeight: "100vh", margin: 0 }}>
-//             <div
-//                 className="d-flex justify-content-center align-items-center"
-//                 style={{ height: '100vh', backgroundColor: '#AB8B84' }}
-//             >
-//                 <button
-//                     className="text-light fw-bold btn"
-//                     style={{ backgroundColor: '#283B3F' }}
-//                     onClick={handleDownload}
-//                 >
-//                     Download PDF
-//                 </button>
-//             </div>
-
-//         </div>
-//     );
-// }
-
-// export default FileSaver
-
-
 import React from "react";
 import { saveAs } from "file-saver";
 import { motion } from "framer-motion";
 import { ImDownload } from "react-icons/im";
-import file from "../Assets/Keerthana Murugaiyan_Resume.pdf";
+// import file from "../Assets/Keerthana Murugaiyan_Resume.pdf";
+import file from "../Assets/KeerthanaMurugaiyan_Resume.pdf";
 
 function FileSaver() {
     const handleDownload = () => {
@@ -47,26 +16,7 @@ function FileSaver() {
                 className="d-flex justify-content-center align-items-center"
                 style={{ height: '63vh' }}
             >
-                {/* Bloom Glow Effect */}
-                {/* <motion.div
-                    className="position-absolute"
-                    initial={{ opacity: 0, scale: 0.5 }}
-                    animate={{ opacity: 0.5, scale: 1.5 }}
-                    transition={{
-                        duration: 1.5,
-                        repeat: Infinity,
-                        repeatType: "mirror",
-                        ease: "easeInOut",
-                    }}
-                    style={{
-                        width: 150,
-                        height: 150,
-                        borderRadius: "50%",
-                        backgroundColor: "#AF9089", // Pinkish hue
-                        filter: "blur(60px)", // Increased blur
-                    }}
-                /> */}
-
+        
                 <motion.div
                     className="position-absolute"
                     initial={{ opacity: 0, scale: 0.5 }}
